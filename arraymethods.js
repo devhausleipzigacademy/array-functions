@@ -20,20 +20,17 @@ let store = [
 // that contains only the product names
 
 // YOUR SOLUTION //
-let products = store.map(item => item.product);
 
 // 1.2. Create a new array called 'cheapItems'
 // that contains only the products with a price below 1.00 Euro
 
 // YOUR SOLUTION //
-let cheapItems = store.filter(item => item.price < 1);
 
 // 1.3. Calculate how much it would cost to buy one of each items
 // Save the result in a variable called 'price'
 // Round the result to two decimal points
 
 // YOUR SOLUTION //
-let price = store.reduce((acc, item) => acc + item.price, 0).toPrecision(3);
 
 
 // ------------- Task 2: TASK FORCE ------------- //
@@ -52,19 +49,72 @@ let team = [
 // that contains only the IDs of the people in the department Cyber Security
 
 // YOUR SOLUTION //
-let cyberSecurityIDs = team.filter(member => member.department === "Cyber Security")
-                            .map(member => member.id);
 
 // 2.2. Create a new array called 'generals'
 // that contains only the IDs of the people who are Generals
 
 // YOUR SOLUTION //
-let generals = team.filter(member => member.name.startsWith("General"))
-                    .map(member => member.id);
 
 // 2.2. Sum up the years of experience that the people in the department "International" have
 // Save the result in a variable called "experience"
 
 // YOUR SOLUTION //
-let experience = team.filter(member => member.department === "International")
-                      .reduce((acc, member) => acc + member.year, 0);
+
+
+// ------------- TESTING ------------- //
+
+let task = 1;
+let subtask = 1;
+// Task 1.1
+try {
+  if (products.length == 5 && products.includes("apple")) {
+    console.log("\x1b[32m", "[Task 1.1] Passed", "\x1b[0m");
+  } else {
+    console.error("\x1b[31m", "[Task 1.1] Failed", "\x1b[0m");
+  }
+  subtask++;
+  
+  // Task 1.2
+  if (cheapItems.length == 3 && typeof cheapItems[0] === "object") {
+    console.log("\x1b[32m", "[Task 1.2] Passed", "\x1b[0m");
+  } else {
+    console.error("\x1b[31m", "[Task 1.2] Failed", "\x1b[0m");
+  }
+  subtask++;
+  
+  // Task 1.3
+  if (price == 6.13) {
+    console.log("\x1b[32m", "[Task 1.3] Passed", "\x1b[0m");
+  } else {
+    console.error("\x1b[31m", "[Task 1.3] Failed", "\x1b[0m");
+  }
+  subtask++;
+  subtask = 1;
+  task++;
+  // Task 2.1
+  if (cyberSecurityIDs.length == 3 && cyberSecurityIDs.includes(12432)) {
+    console.log("\x1b[32m", "[Task 2.1] Passed", "\x1b[0m");
+  } else {
+    console.error("\x1b[31m", "[Task 2.1] Failed", "\x1b[0m");
+  }
+  subtask++;
+  
+  // Task 2.2
+  if (generals.length == 3 && generals.includes(22344)) {
+    console.log("\x1b[32m", "[Task 2.2] Passed", "\x1b[0m");
+  } else {
+    console.error("\x1b[31m", "[Task 2.2] Failed", "\x1b[0m");
+  }
+  subtask++;
+  
+  // Task 2.3
+  if (experience == 15) {
+    console.log("\x1b[32m", "[Task 2.3] Passed", "\x1b[0m");
+  } else {
+    console.error("\x1b[31m", "[Task 2.3] Failed", "\x1b[0m");
+  }
+  subtask++;
+
+} catch {
+  console.error("\x1b[31m", `[Task ${task}.${subtask}] Failed`, "\x1b[0m");
+}
