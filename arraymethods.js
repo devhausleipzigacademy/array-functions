@@ -55,7 +55,7 @@ let team = [
 
 // YOUR SOLUTION //
 
-// 2.2. Sum up the years of experience that the people in the department "International" have
+// 2.3. Sum up the years of experience that the people in the department "International" have
 // Save the result in a variable called "experience"
 
 // YOUR SOLUTION //
